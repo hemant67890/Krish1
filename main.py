@@ -43,13 +43,13 @@ bot = Client("bot",
 # Get the MongoDB collection for this bot
 collection = get_collection(BOT_NAME, MONGO_URI)
 # Constants
-OWNER_IDS = [6960427846]  # Replace with the actual owner user IDs
+OWNER_IDS = [6126688051]  # Replace with the actual owner user IDs
 
 cookies_file_path ="modules/cookies.txt"
 # Global variables
-log_channel_id = [-1002311248665]
+log_channel_id = [-1002335220633]
 authorized_users = [6960427846,7385324642]
-ALLOWED_CHANNEL_IDS = [-1002311248665]
+ALLOWED_CHANNEL_IDS = [-1002335220633]
 my_name = "❤️"
 overlay = None 
 accept_logs = 0
@@ -111,7 +111,7 @@ async def add_log_channel(client: Client, message: Message):
     try:
         new_log_channel_id = int(message.text.split(maxsplit=1)[1])
         log_channel_id = new_log_channel_id
-        save_log_channel_id(collection, -1002311248665)
+        save_log_channel_id(collection, -1002335220633)
         await message.reply(f"Log channel ID updated to {new_log_channel_id}.")
     except (IndexError, ValueError):
         await message.reply("Please provide a valid channel ID.")
